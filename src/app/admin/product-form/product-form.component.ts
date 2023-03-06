@@ -1,3 +1,4 @@
+import { ProductService } from './../../Services/product.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-form.component.scss']
 })
 export class ProductFormComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(private ProductService: ProductService) { }
 
   ngOnInit(): void {
+  }
+  save(product: { title:string, price:string, category:string, imageUrl:string}){
+     this.ProductService.create(product);
   }
 
 }
