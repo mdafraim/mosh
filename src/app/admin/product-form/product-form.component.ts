@@ -14,6 +14,7 @@ export class ProductFormComponent implements OnInit {
   }
   save(product: { title:string, price:string, category:string, imageUrl:string}){
      this.ProductService.create(product);
+   
   }
 
 }
